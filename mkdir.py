@@ -6,6 +6,6 @@ n_episodes = int(input('Number of Episodes: '))
 
 folders = [
 	os.makedirs(f'{name}/S{season:02d}/E{episode:02d}')
-	for season in range(n_seasons+1)
-	for episode in range(n_episodes+1)
+	for season in range(1, n_seasons+1)
+	for episode in range(1, n_episodes+1)
 ]
