@@ -1,27 +1,11 @@
 import os
 
-
 name = input('Series Name: ')
+n_seasons = int(input('Number of Seasons: '))
+n_episodes = int(input('Number of Episodes: '))
 
-total_seasons = int(input('Number of Seasons: '))
-
-total_episodes = int(input('Number of Episodes: '))
-
-
-for season in range(1, total_seasons+1):
-    for episode in range(1, total_episodes+1):
-
-        folder_name = name + '/S'
-
-        if season < 10:
-            folder_name += '0'
-
-        folder_name += str(season) + '/E'
-
-        if episode < 10:
-            folder_name += '0'
-
-        folder_name += str(episode)
-
-        os.makedirs(folder_name)
-
+folders = [
+	os.makedirs(f'{name}/S{season:02d}/E{episode:02d}')
+	for season in range(n_seasons+1)
+	for episode in range(n_episodes+1)
+]
